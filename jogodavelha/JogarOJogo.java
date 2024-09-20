@@ -86,7 +86,7 @@ public class JogarOJogo {
     public int getJogadorDaVez (){
         return this.jdv ;}
     //Vencedor
-    public int getVencedor(){
+    public int getQuemGanhou(){
         return this.quemGanhou;
     }
     
@@ -101,27 +101,34 @@ public class JogarOJogo {
     //verificar quem venceu
     public void verificarVencedor(){
         this.quemGanhou = 0;
+    //verificar se X/1 ganhou 
+    //horizontal
+    if ((getJV_00() == 1) && (getJV_01() == 1) && (getJV_02() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_10() == 1) && (getJV_11() == 1) && (getJV_12() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_20() == 1) && (getJV_21() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    //vertical
+    if ((getJV_00() == 1) && (getJV_10() == 1) && (getJV_20() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_01() == 1) && (getJV_11() == 1) && (getJV_21() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_02() == 1) && (getJV_12() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    //diagonal
+    if ((getJV_00() == 1) && (getJV_11() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_20() == 1) && (getJV_11() == 1) && (getJV_02() == 1)){ this.quemGanhou = 1;}
+    //verificar se O/2
+    if ((getJV_00() == 1) && (getJV_01() == 1) && (getJV_02() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_10() == 1) && (getJV_11() == 1) && (getJV_12() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_20() == 1) && (getJV_21() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    //vertical
+    if ((getJV_00() == 1) && (getJV_10() == 1) && (getJV_20() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_01() == 1) && (getJV_11() == 1) && (getJV_21() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_02() == 1) && (getJV_12() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    //diagonal
+    if ((getJV_00() == 1) && (getJV_11() == 1) && (getJV_22() == 1)){ this.quemGanhou = 1;}
+    if ((getJV_20() == 1) && (getJV_11() == 1) && (getJV_02() == 1)){ this.quemGanhou = 1;}
+    }
+
+
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-     
-    
-}
+

@@ -4,6 +4,7 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
 
     public GUI_JogoDaVelha() {
         initComponents();
+        jogarOjogo.SetJogadorDaVez(1);
     }
 
     /**
@@ -77,6 +78,12 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        jb_00.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_00ActionPerformed(evt);
+            }
+        });
 
         jb_20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,19 +283,17 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_Jdv, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jb_5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addComponent(jb_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jb_Jdv, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jb_5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jb_3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -321,7 +326,7 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,6 +392,24 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_5ActionPerformed
 
+    private void jb_00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_00ActionPerformed
+        if(jogarOjogo.getQuemGanhou()== 0){
+            if(jogarOjogo.getJV_00() == 0){
+                if(jogarOjogo.getJogadorDaVez() == 1){
+                   jogarOjogo.getJV_00();
+                   jb_00.setText("X");
+                   jogarOjogo.SetJogadorDaVez(1);
+                }
+            }
+            jogarOjogo.verificarVencedor();
+            if(jogarOjogo.getQuemGanhou()== 1){
+                jB_QuemGanhou.setText("JOGADOR 1");
+            } else {
+                jB_QuemGanhou.setText("JOGADOR 2");
+            }
+        }
+    }//GEN-LAST:event_jb_00ActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jB_QuemGanhou;
@@ -416,4 +439,5 @@ public class GUI_JogoDaVelha extends javax.swing.JFrame {
     private javax.swing.JButton jb_5;
     private javax.swing.JButton jb_Jdv;
     // End of variables declaration//GEN-END:variables
+    JogarOJogo jogarOjogo = new JogarOJogo();
 }
