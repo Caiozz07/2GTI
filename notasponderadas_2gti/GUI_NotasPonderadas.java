@@ -110,15 +110,42 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Habilitado");
 
+        cb_Nota1.setSelected(true);
         cb_Nota1.setText("Nota 1");
+        cb_Nota1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_Nota1ActionPerformed(evt);
+            }
+        });
 
+        cb_Nota2.setSelected(true);
         cb_Nota2.setText("Nota 2");
+        cb_Nota2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_Nota2ActionPerformed(evt);
+            }
+        });
 
         cb_Nota3.setText("Nota 3");
+        cb_Nota3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_Nota3ActionPerformed(evt);
+            }
+        });
 
         cb_Nota4.setText("Nota 4");
+        cb_Nota4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_Nota4ActionPerformed(evt);
+            }
+        });
 
         cb_Nota5.setText("Nota 5");
+        cb_Nota5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_Nota5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -158,6 +185,19 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Notas");
+
+        jtf_Nota1.setText("0");
+
+        jtf_Nota2.setText("0");
+
+        jtf_Nota3.setText("0");
+        jtf_Nota3.setEnabled(false);
+
+        jtf_Nota4.setText("0");
+        jtf_Nota4.setEnabled(false);
+
+        jtf_Nota5.setText("0");
+        jtf_Nota5.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -205,10 +245,13 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jtf_Peso2.setText("0");
 
         jtf_Peso3.setText("0");
+        jtf_Peso3.setEnabled(false);
 
         jtf_Peso4.setText("0");
+        jtf_Peso4.setEnabled(false);
 
         jtf_Peso5.setText("0");
+        jtf_Peso5.setEnabled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -253,12 +296,14 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Resultado =");
 
+        jtf_Media.setFocusable(false);
         jtf_Media.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtf_MediaActionPerformed(evt);
             }
         });
 
+        jtf_SomaPesos.setFocusable(false);
         jtf_SomaPesos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtf_SomaPesosActionPerformed(evt);
@@ -329,6 +374,7 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
         });
 
         jcb_MediaComPesos.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jcb_MediaComPesos.setSelected(true);
         jcb_MediaComPesos.setText("Média com Pesos ");
         jcb_MediaComPesos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,12 +389,12 @@ public class GUI_NotasPonderadas extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jb_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jb_Calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addComponent(jb_VerificarPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(16, 16, 16)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_Calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_VerificarPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addComponent(jcb_MediaComPesos)
                         .addGap(38, 38, 38))))
@@ -465,16 +511,16 @@ if (cnp.isNotasPonderadas() == true){
        cnp.setCbNota2(rootPaneCheckingEnabled);
        
        //limpar
-       jtf_Nota1.setText("");
-       jtf_Nota2.setText("");
-       jtf_Nota3.setText("");
-       jtf_Nota4.setText("");
-       jtf_Nota5.setText("");
-       jtf_Peso1.setText("");
-       jtf_Peso2.setText("");
-       jtf_Peso3.setText("");
-       jtf_Peso4.setText("");
-       jtf_Peso5.setText("");
+       jtf_Nota1.setText("0");
+       jtf_Nota2.setText("0");
+       jtf_Nota3.setText("0");
+       jtf_Nota4.setText("0");
+       jtf_Nota5.setText("0");
+       jtf_Peso1.setText("0");
+       jtf_Peso2.setText("0");
+       jtf_Peso3.setText("0");
+       jtf_Peso4.setText("0");
+       jtf_Peso5.setText("0");
        jtf_Media.setText("");
        jtf_SomaPesos.setText("");
        cb_Nota1.setSelected(false);
@@ -482,6 +528,7 @@ if (cnp.isNotasPonderadas() == true){
        cb_Nota3.setSelected(false);
        cb_Nota4.setSelected(false);
        cb_Nota5.setSelected(false);
+       jcb_MediaComPesos.setSelected(false);
     }//GEN-LAST:event_jb_LimparActionPerformed
 
     private void jtf_SomaPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_SomaPesosActionPerformed
@@ -493,6 +540,57 @@ if (cnp.isNotasPonderadas() == true){
     private void jtf_MediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_MediaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_MediaActionPerformed
+
+    private void cb_Nota3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_Nota3ActionPerformed
+      if (cb_Nota3.isSelected()){
+      jtf_Nota3.setEnabled(true);
+      jtf_Peso3.setEnabled(true);
+      } else {
+      if (cb_Nota4.isSelected() == false) {
+      
+      jtf_Nota3.setEnabled(false);
+      jtf_Peso3.setEnabled(false);
+      }  
+      }
+    
+    }//GEN-LAST:event_cb_Nota3ActionPerformed
+
+    private void cb_Nota4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_Nota4ActionPerformed
+        if (cb_Nota3.isSelected()){
+      if(cb_Nota4.isSelected())
+              jtf_Nota4.setEnabled(true);
+              jtf_Peso4.setEnabled(true);
+      } else {
+      if (cb_Nota5.isSelected() == false) {
+      jtf_Nota4.setEnabled(false);
+      jtf_Peso4.setEnabled(false);
+          
+      }}
+    
+       
+    }//GEN-LAST:event_cb_Nota4ActionPerformed
+
+    private void cb_Nota5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_Nota5ActionPerformed
+         if (cb_Nota4.isSelected()){
+      if(cb_Nota5.isSelected())
+              jtf_Nota5.setEnabled(true);
+              jtf_Peso5.setEnabled(true);
+      } else {
+      jtf_Nota5.setEnabled(false);
+      jtf_Peso5.setEnabled(false);
+          
+      }
+    
+       
+    }//GEN-LAST:event_cb_Nota5ActionPerformed
+
+    private void cb_Nota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_Nota1ActionPerformed
+  
+    }//GEN-LAST:event_cb_Nota1ActionPerformed
+
+    private void cb_Nota2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_Nota2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_Nota2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -201,28 +201,45 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="cb_Nota1">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Nota 1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_Nota1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cb_Nota2">
           <Properties>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="Nota 2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_Nota2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cb_Nota3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nota 3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_Nota3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cb_Nota4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nota 4"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_Nota4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cb_Nota5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nota 5"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cb_Nota5ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -286,14 +303,32 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Nota1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Nota2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Nota3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Nota4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Nota5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -373,16 +408,19 @@
         <Component class="javax.swing.JTextField" name="jtf_Peso3">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Peso4">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Peso5">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -448,11 +486,17 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_Media">
+          <Properties>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtf_MediaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_SomaPesos">
+          <Properties>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtf_SomaPesosActionPerformed"/>
           </Events>
@@ -490,13 +534,13 @@
               <Group type="102" attributes="0">
                   <EmptySpace pref="24" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="jb_Limpar" min="-2" pref="205" max="-2" attributes="0"/>
-                          <Component id="jb_Calcular" min="-2" pref="205" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jb_Limpar" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="jb_Calcular" min="-2" pref="205" max="-2" attributes="0"/>
                               <Component id="jb_VerificarPesos" min="-2" pref="205" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jcb_MediaComPesos" min="-2" max="-2" attributes="0"/>
@@ -552,6 +596,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="16" style="1"/>
             </Property>
+            <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="M&#xe9;dia com Pesos "/>
           </Properties>
           <Events>
